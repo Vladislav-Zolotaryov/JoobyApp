@@ -1,6 +1,6 @@
-# JoobyOrderer
+# JoobyApp
 
-Welcome to JoobyOrderer!!
+Welcome to JoobyApp!
 
 ## running
 
@@ -12,5 +12,5 @@ Welcome to JoobyOrderer!!
 
 ## docker
 
-     docker build . -t JoobyOrderer
-     docker run -p 8080:8080 -it JoobyOrderer
+     docker build . -t JoobyApp
+     docker run -p 8080:8080 -it JoobyApp
