@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
   id("application")
   id("org.jetbrains.kotlin.jvm") version "1.8.20"
-  id("io.jooby.run") version "3.0.0.M7"
+  id("io.jooby.run") version "3.0.0.M9"
   id("com.google.osdetector") version "1.7.3"
   id("com.github.johnrengelman.shadow") version "8.1.1"
 }
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-  implementation(platform("io.jooby:jooby-bom:3.0.0.M7"))
+  implementation(platform("io.jooby:jooby-bom:3.0.0.M9"))
   implementation("io.jooby:jooby-netty")
   implementation("io.jooby:jooby-jackson")
   implementation("io.jooby:jooby-hikari")
@@ -49,6 +49,7 @@ tasks.test {
 
 tasks.withType<KotlinCompile>().all {
   kotlinOptions.javaParameters = true
+  kotlinOptions.jvmTarget = "17"
 }
 
 tasks.shadowJar {
