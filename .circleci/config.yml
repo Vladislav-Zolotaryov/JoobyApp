@@ -11,7 +11,7 @@ jobs:
     executor: java17
     steps:
     - run: |
-        apk add shasum
+        apk add perl-utils
 workflows:
   build:
     jobs:
