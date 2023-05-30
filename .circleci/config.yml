@@ -5,19 +5,13 @@ executors:
     docker:
       - image: 'eclipse-temurin:17-jdk-alpine'  
 
-orbs:
-  gradle: circleci/gradle@3.0
-
 jobs:
   run-build:
     executor: java17
     steps:
-    - run: apk add perl-utils
+    - run: ./gradlew build
+
 workflows:
   build:
     jobs:
       - run-build
-      - gradle/test:
-          requires: 
-            - run-build
-          executor: java17
