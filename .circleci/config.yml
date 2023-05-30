@@ -2,11 +2,11 @@ version: 2.1
 orbs:
   gradle: circleci/gradle@3.0
 executors:
-  java21:
+  java17:
     docker:
-      - image: 'openjdk:21-jdk'  
+      - image: 'amazoncorretto:17'  
 workflows:
   build:
     jobs:
       - gradle/test:
-          executor: java21
+          executor: java17
