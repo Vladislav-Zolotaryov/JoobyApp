@@ -5,3 +5,5 @@ workflows:
   build:
     jobs:
       - gradle/test
+        command: 'build'
+        executor: java17
