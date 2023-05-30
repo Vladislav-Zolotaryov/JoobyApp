@@ -4,6 +4,6 @@ orbs:
 workflows:
   build:
     jobs:
-      - gradle/test
-        command: 'build'
-        executor: java17
+      - gradle/test:
+          command: 'build'
+          executor: java17
