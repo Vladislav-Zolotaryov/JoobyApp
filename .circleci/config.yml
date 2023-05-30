@@ -1,9 +1,13 @@
 version: 2.1
 orbs:
   gradle: circleci/gradle@3.0
+executors:
+  java21:
+    docker:
+      - image: 'openjdk:21-slim-buster'  
 workflows:
   build:
     jobs:
       - gradle/test:
           command: 'build'
-          executor: java17
+          executor: java21
