@@ -9,6 +9,7 @@ jobs:
   run-build:
     executor: java17
     steps:
+    - checkout
     - run: ./gradlew build
 
 workflows:
