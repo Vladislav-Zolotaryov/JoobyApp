@@ -7,14 +7,13 @@ executors:
       - image: 'eclipse-temurin:17-jdk-alpine'  
 
 jobs:
-  install-shasum:
+  run-build:
     executor: java17
     steps:
-    - run: |
-        apk add perl-utils
+    - run: apk add perl-utils
+    - gradle/test:
+        executor: java17
 workflows:
   build:
     jobs:
-      - install-shasum
-      - gradle/test:
-          executor: java17
+      - run-build
