@@ -4,14 +4,14 @@ orbs:
 executors:
   java17:
     docker:
-      - image: 'amazoncorretto:17'  
+      - image: 'eclipse-temurin:17-jdk-alpine'  
 
 jobs:
   install-shasum:
     executor: java17
     steps:
     - run: |
-        apt-get install -y shasum
+        apk add shasum
 workflows:
   build:
     jobs:
