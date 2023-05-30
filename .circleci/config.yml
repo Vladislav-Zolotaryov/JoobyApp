@@ -4,7 +4,7 @@ orbs:
 executors:
   java21:
     docker:
-      - image: 'openjdk:21-slim-buster'  
+      - image: 'openjdk:21-jdk'  
 workflows:
   build:
     jobs:
