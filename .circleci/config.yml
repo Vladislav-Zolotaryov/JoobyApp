@@ -1,0 +1,18 @@
+version: 2.1
+  
+executors:
+  java17:
+    docker:
+      - image: 'eclipse-temurin:17-jdk-alpine'  
+
+jobs:
+  run-build:
+    executor: java17
+    steps:
+    - checkout
+    - run: ./gradlew build
+
+workflows:
+  build:
+    jobs:
+      - run-build
